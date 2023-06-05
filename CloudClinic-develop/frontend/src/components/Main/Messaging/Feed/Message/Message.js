@@ -1,7 +1,7 @@
 import React from 'react';
 import './Message.scss';
 
-const Message = ({ userImage, isSender }) => {
+const Message = ({ userImage, isSender ,message}) => {
   const senderMessage = () => {
     return (
       <div className="message-wrapper-sender">
@@ -40,7 +40,28 @@ const Message = ({ userImage, isSender }) => {
     );
   };
 
-  return isSender ? senderMessage() : receiverMessage();
+  const customMessage=()=>{
+    return (
+      <div className="message-wrapper-receiver">
+        <div className="message-container">
+          <span className="time-stamp">9:04 AM</span>
+          <div className="message receiver">
+            <p>
+              {message}
+            </p>
+          </div>
+        </div>
+        <div className="user-avatar" style={userImage} />
+      </div>
+    );
+  }
+
+  return isSender ? 
+
+    senderMessage() : (
+      message? customMessage()
+    :
+      receiverMessage());
 };
 
 export default Message;

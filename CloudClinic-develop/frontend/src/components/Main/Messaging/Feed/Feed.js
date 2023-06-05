@@ -1,4 +1,4 @@
-import React from 'react';
+import React ,{useState} from 'react';
 import './Feed.scss';
 import Message from './Message/Message';
 import Input from './Input/Input';
@@ -22,6 +22,12 @@ const Feed = () => {
     alignSelf: 'end',
   };
 
+  const [messages, setMessages] = useState([]);
+  const handleAddMessage = (message) => {
+    // Add the new message to the messages state
+    setMessages([...messages, message]);
+  };
+
   return (
     <div className="feed-wrapper">
       <div className="trim" />
@@ -40,8 +46,17 @@ const Feed = () => {
         <Message userImage={userTwo} isSender />
         <Message userImage={userOne} />
         <Message userImage={userTwo} isSender />
+        <div>
+      
+      <ul>
+        {messages.map((message, index) => (
+          // <li key={index}>{message}</li>
+          <Message userImage={userOne} message={message} key={index} />
+        ))}
+      </ul>
+    </div>
       </div>
-      <Input />
+      <Input onAddMessage={handleAddMessage}/>
     </div>
   );
 };
