@@ -56,16 +56,16 @@ const Home = () => {
           <div className="col-l">
             <h2>About</h2>
             <p>
-              CloudClinic is the capstone project of Harry Buisman, Duke Nguyen
-              & Hugh Greethead in the&nbsp;
+              CloudClinic is the capstone project of Devanshi Jain, Arpita Jindal , Muskaan Dudi 
+              CSE students of &nbsp;
               <a
                 href="https://coderacademy.edu.au/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Coder Academy&nbsp;
+                Chitkara University &nbsp;
               </a>
-              Web Development Bootcamp, 2020. <br />
+              IP Project 2023. <br />
               <br /> The application is built on the MERN stack, using modern
               technologies and methods, such as React Hooks and the Context API.
               If you have any questions, please get in touch!
@@ -73,7 +73,7 @@ const Home = () => {
             <ul>
               <li>
                 <a
-                  href="https://github.com/dukeraphaelng/CloudClinic"
+                  href="https://github.com/JainDevanshi3533/IP-Project"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -82,29 +82,29 @@ const Home = () => {
               </li>
               <li>
                 <a
-                  href="https://harrybuisman.com/"
+                  href="https://github.com/JainDevanshi3533"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Harry Buisman Portfolio
+                  Devanshi 
                 </a>
               </li>
               <li>
                 <a
-                  href="https://duke-nguyen.netlify.app/"
+                  href="https://github.com/arpita7777777a"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Duke Nguyen Portfolio
+                 Arpita
                 </a>
               </li>
               <li>
                 <a
-                  href="https://hughgreethead.dev/"
+                  href="https://github.com/muskaandudi"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Hugh Greethead Portfolio
+                  Muskaan
                 </a>
               </li>
             </ul>
