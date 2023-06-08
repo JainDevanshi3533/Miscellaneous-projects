@@ -205,39 +205,39 @@ const UpdateProfile = () => {
       }
     }
 
-    // if (uploadedImage) {
-    //   if (uploadedImage.size > 1000000) {
-    //     setFlashMessage({
-    //       message: `'${uploadedImage.name}' is too large, please pick a file under 1mb`,
-    //       type: 'error',
-    //       icon: 'alert',
-    //     });
-    //     return null;
-    //   } else {
-    //     const fd = new FormData();
+    if (uploadedImage) {
+      if (uploadedImage.size > 1000000) {
+        setFlashMessage({
+          message: `'${uploadedImage.name}' is too large, please pick a file under 1mb`,
+          type: 'error',
+          icon: 'alert',
+        });
+        return null;
+      } else {
+        const fd = new FormData();
 
-    //     fd.append('image', uploadedImage, uploadedImage.name);
-    //     if (fd) {
-    //       try {
-    //         const responseFile = await request.post('/uploads', fd, {});
-    //         console.log(responseFile);
-    //         const responseUpdateUser = await updateProfile({
-    //           profileImage: responseFile.data.Location,
-    //         });
-    //         console.log(responseUpdateUser);
-    //         setUser(responseUpdateUser.data);
-    //       } catch (err) {
-    //         console.log(err);
-    //         setFlashMessage({
-    //           message: `Something went wrong - ${err.message}`,
-    //           type: 'error',
-    //           icon: 'alert',
-    //         });
-    //         return null;
-    //       }
-    //     }
-    //   }
-    // }
+        fd.append('image', uploadedImage, uploadedImage.name);
+        if (fd) {
+          try {
+            const responseFile = await request.post('/uploads', fd, {});
+            console.log(responseFile);
+            const responseUpdateUser = await updateProfile({
+              profileImage: responseFile.data.Location,
+            });
+            console.log(responseUpdateUser);
+            setUser(responseUpdateUser.data);
+          } catch (err) {
+            console.log(err);
+            setFlashMessage({
+              message: `Something went wrong - ${err.message}`,
+              type: 'error',
+              icon: 'alert',
+            });
+            return null;
+          }
+        }
+      }
+    }
 
     if (flashMessage === null) {
       const updateData = async () => {
@@ -346,10 +346,10 @@ const UpdateProfile = () => {
             );
           },
         });
-        console.log(responseFile);
+        console.log("response  File" ,responseFile);
 
         const responseUpdateUser = await updateProfile({
-          profileImage: responseFile.data.Location,
+          profileImage: responseFile.data
         });
         console.log(responseUpdateUser);
         setUser(responseUpdateUser.data);

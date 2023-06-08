@@ -28,23 +28,26 @@ const upload = multer({ storage }).single('image');
 
 router.post('/', verifyToken, upload, (req, res) => {
   try {
-    const myFile = req.file.originalname.split('.');
-    const fileType = myFile[myFile.length - 1];
+    // const myFile = req.file.originalname.split('.');
+    // const fileType = myFile[myFile.length - 1];
 
-    const params = {
-      Bucket: process.env.AWS_BUCKET_NAME,
-      Key: `${uuid()}.${fileType}`,
-      Body: req.file.buffer,
-    };
+    // const params = {
+    //   Bucket: process.env.AWS_BUCKET_NAME,
+    //   Key: `${uuid()}.${fileType}`,
+    //   Body: req.file.buffer,
+    // };
 
-    s3.upload(params, (err, data) => {
-      if (err) {
-        res.status(500).send(err);
-      }
+    // s3.upload(params, (err, data) => {
+    //   if (err) {
+    //     res.status(500).send(err);
+    //   }
 
-      res.status(200).send(data);
-    });
+    //   res.status(200).send(data);
+    // });
     // res.send('Hello');
+    console.log(upload);
+    console.log(req.file);
+    res.send(req.file);
   } catch (e) {
     res.status(400).send(e);
   }
